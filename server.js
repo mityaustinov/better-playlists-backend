@@ -4,8 +4,8 @@ let querystring = require('querystring')
 
 let app = express()
 
-let redirect_uri = 
-  process.env.REDIRECT_URI || 
+let redirect_uri =
+  process.env.REDIRECT_URI ||
   'http://localhost:8888/callback'
 
 app.get('/login', function(req, res) {
@@ -28,7 +28,7 @@ app.get('/callback', function(req, res) {
       grant_type: 'authorization_code'
     },
     headers: {
-      'Authorization': 'Basic ' + (new Buffer(
+      'Authorization': 'Basic ' + (new Buffer.from(
         process.env.SPOTIFY_CLIENT_ID + ':' + process.env.SPOTIFY_CLIENT_SECRET
       ).toString('base64'))
     },
