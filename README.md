@@ -26,11 +26,11 @@ Then go to http://localhost:8888/login in your browser. This will initiate the l
 This template is indended to be deployed on Heroku. After installing the heroku CLI tools you can run the below commands in the same directory as server.js(replacing abc123, cba456, mybackend and myfrontend with your actual stuff - the below example assume that you already have your frontend running on http://myfrontend.herokuapp.com.
 
 ```
-heroku create mybackend
+heroku create better-playlists-mitya
 heroku config:set SPOTIFY_CLIENT_ID=abc123
 heroku config:set SPOTIFY_CLIENT_SECRET=cba456
-heroku config:set REDIRECT_URI=https://mybackend.herokuapp.com/callback
-heroku config:set FRONTEND_URI=https://myfrontend.herokuapp.com
+heroku config:set REDIRECT_URI=https://better-playlists-mitya-backend.herokuapp.com/callback
+heroku config:set FRONTEND_URI=https://better-playlists-mitya.herokuapp.com/
 git push heroku master
 ```
 
